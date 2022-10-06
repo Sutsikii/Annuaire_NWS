@@ -1,7 +1,10 @@
 <?php
 
 require_once 'Class/Student.php';
+require_once 'Class/Form.php';
 
-$etudiant = new Student("21", "Nicolas", "Dutertre");
+$form = new Form($_POST);
 
-var_dump($etudiant);
+echo $form->input('username');
+echo $form->input('password');
+echo $form->submit();
