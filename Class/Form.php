@@ -3,7 +3,7 @@
 class Form{
 
     private $data;
-    public $surround = 'p';
+    public $surround = 'div';
 
     public function __construct($data = array())
     {
@@ -16,9 +16,17 @@ class Form{
         return "<{$this->surround}>{$html}</{$this->surround}>";
     }
 
+    private function getValue($index)
+    {
+        return isset($this->data[$index]) ? $this->data[$index] : null;
+    }
+
     public function input($name)
     {
-        return $this->surround('<input type="text name="' . $name . '">', 'p');
+        return $this->surround
+        (
+            '<input type="text name="' . $name . '" value=""' . $this->getValue($name) . '">'
+        );
     } 
 
     public function submit()
