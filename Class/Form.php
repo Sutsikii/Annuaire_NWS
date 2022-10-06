@@ -3,7 +3,7 @@
 class Form{
 
     private $data;
-    public $surround = 'div';
+    public $surround = "p";
 
     public function __construct($data = array())
     {
