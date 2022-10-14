@@ -17,16 +17,24 @@ $form = new Form($_POST);
 </head>
 <body>
 
-    <h1>Annuaire Normandie Web School</h1>
+    <div class="navbar">
+        <ul>
+            <a href="index.php"><li>Accueil</li></a>
+            <a href="public/template/liste.php"><li>Liste des élèves</li></a>
+            <a href="public/template/add.php"><li>Ajouter un élève</li></a>
+        </ul>
+    </div>
 
-    <?php
-    echo $form->input('username');
-    echo $form->input('password');
-    echo $form->submit();
-    ?>
+
+    <form action="#" method="post">
+        <?php
+        echo $form->input('username');
+        echo $form->input('password');
+        echo $form->submit();
+        ?>
+    </form>
 
 </body>
 </html>
-<form action="#" method="post">
 
-</form>
+
