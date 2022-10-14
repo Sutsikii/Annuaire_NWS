@@ -26,9 +26,9 @@ require_once 'Class/Form.php';
     </div>
 
     <div class="logo">
-        <img class="logo" src="public/src/nws_logo.png" alt="">
-
         <h1>Annuaire Normandie Web School</h1>
+
+        <img class="logo" src="public/src/nws_logo.png" alt="">
     </div>
 </body>
 </html>
