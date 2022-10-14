@@ -1,3 +1,9 @@
+<?php
+
+require_once '../../class/Form.php';
+$form = new Form($_POST);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +23,14 @@
             <a href="add.php"><li>Ajouter un élève</li></a>
         </ul>
     </div>
+
+    <form action="#" method="post">
+        <?php
+        echo $form->input('username');
+        echo $form->input('password');
+        echo $form->submit();
+        ?>
+    </form>
 
 </body>
 </html>
