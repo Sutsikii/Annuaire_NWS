@@ -26,8 +26,9 @@ $form = new Form($_POST);
 
     <form class="forms-add" action="#" method="post">
         <?php
-        echo $form->input('username');
-        echo $form->input('password');
+        echo $form->input('username', 'prénom');
+        echo $form->input('lastname', 'nom');
+        echo $form->input('password', 'Mot de passe');
         echo $form->submit();
         ?>
     </form>
