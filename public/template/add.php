@@ -24,7 +24,7 @@ $form = new Form($_POST);
         </ul>
     </div>
 
-    <form action="#" method="post">
+    <form class="forms-add" action="#" method="post">
         <?php
         echo $form->input('username');
         echo $form->input('password');

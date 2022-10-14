@@ -3,7 +3,7 @@
 require_once 'Class/Student.php';
 require_once 'Class/Form.php';
 
-$form = new Form($_POST);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,15 +25,11 @@ $form = new Form($_POST);
         </ul>
     </div>
 
+    <div class="logo">
+        <img class="logo" src="public/src/nws_logo.png" alt="">
 
-    <form action="#" method="post">
-        <?php
-        echo $form->input('username');
-        echo $form->input('password');
-        echo $form->submit();
-        ?>
-    </form>
-
+        <h1>Annuaire Normandie Web School</h1>
+    </div>
 </body>
 </html>
 
