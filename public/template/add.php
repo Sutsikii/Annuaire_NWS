@@ -29,7 +29,7 @@ $form = new Form($_POST);
         echo $form->input('username', 'prénom');
         echo $form->input('lastname', 'nom');
         echo $form->input('password', 'Mot de passe');
-        echo $form->submit();
+        echo $form->submit('forms-send');
         ?>
     </form>
 
