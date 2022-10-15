@@ -2,8 +2,7 @@
 
 require_once 'Class/Student.php';
 require_once 'Class/Form.php';
-
-
+require_once 'Class/Pdo.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
