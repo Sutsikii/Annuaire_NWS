@@ -21,9 +21,9 @@ class Form{
         return isset($this->data[$index]) ? $this->data[$index] : null;
     }
 
-    public function input($name, $placeholder)
+    public function input($name, $placeholder, $type)
     {
-        return ('<input placeholder="' . $placeholder .'" type="text name="' . $name . '" value="" class="forms-input"' . $this->getValue($name) . '">');
+        return ('<input type="' . $type . '" placeholder="' . $placeholder .'" type="text name="' . $name . '" value="" class="forms-input"' . $this->getValue($name) . '">');
     } 
 
     public function submit($class)
