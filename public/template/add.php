@@ -1,6 +1,9 @@
 <?php
 
 require_once '../../class/Form.php';
+require_once '../../Class/Student.php';
+require_once '../../Class/Database.php';
+
 $form = new Form($_POST);
 ?>
 
@@ -29,7 +32,7 @@ $form = new Form($_POST);
         echo $form->input('username', 'Prénom', 'text');
         echo $form->input('lastname', 'Nom', 'text');
         echo $form->input('email', 'Email', 'email');
-        echo $form->input('password', 'Mot de passe', 'password');
+        echo $form->input('telephone', 'Téléphone', 'tel');
         echo $form->submit('forms-send');
         ?>
     </form>
