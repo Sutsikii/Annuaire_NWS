@@ -1,15 +1,26 @@
 <?php
 
-class Student
-{
-    public $age;
-    public $lastname;
-    public $firstname;
+require_once 'Database.php';
 
-    public function __construct($age, $firstname, $lastname)
+class Student extends Database
+{
+    public $prenom;
+    public $nom;
+    public $email;
+    public $telephone;
+
+    public function __construct($prenom, $nom, $email, $telephone)
     {
-        $this->age = $age;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
+        $this->prenom = $prenom;
+        $this->nom = $nom;
+        $this->email = $email;
+        $this->telephone = $telephone;
+    }
+
+    public function addStudent($prenom, $nom, $email, $telephone)
+    {
+        $sql = $this->getPDO()->query("INSERT INTO etudiant(prenom, nom, email, telephone) value(?,?,?,?)");
+        $request = $this->getPDO()->prepare($sql);
+        $request->execute(array($prenom, $nom, $email, $telephone));
     }
 }

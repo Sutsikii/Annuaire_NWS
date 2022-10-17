@@ -5,6 +5,21 @@ require_once '../../Class/Student.php';
 require_once '../../Class/Database.php';
 
 $form = new Form($_POST);
+
+if(isset($_POST['submit'])){
+    
+    if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']))
+    {
+        // $prenom = ($_POST['prenom']);
+        // $nom = ($_POST['nom']); 
+        // $email = ($_POST['email']);
+        // $telephone = ($_POST['telephone']);
+
+        $student = new Student($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['telephone']);
+        $student->addStudent($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['telephone']);
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +44,11 @@ $form = new Form($_POST);
 
     <form class="forms-add" action="#" method="post">
         <?php
-        echo $form->input('username', 'Prénom', 'text');
-        echo $form->input('lastname', 'Nom', 'text');
+        echo $form->input('prenom', 'Prénom', 'text');
+        echo $form->input('nom', 'Nom', 'text');
         echo $form->input('email', 'Email', 'email');
         echo $form->input('telephone', 'Téléphone', 'tel');
-        echo $form->submit('forms-send');
+        echo $form->submit('forms-send', 'submit');
         ?>
     </form>
 

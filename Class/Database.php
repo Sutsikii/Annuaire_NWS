@@ -36,4 +36,11 @@ class Database
         return $datas;
     }
 
+    // public function addDatas($prenom, $nom, $email, $telephone)
+    // {
+    //     $sql = "INSERT INTO etudiant(prenom, nom, email, telephone) value(?,?,?,?)";
+    //     $request = $this->getPDO()->prepare($sql);
+    //     $request->execute(array($prenom, $nom, $email, $telephone));
+    // }
+
 }

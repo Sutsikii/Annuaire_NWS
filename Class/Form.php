@@ -26,8 +26,8 @@ class Form{
         return ('<input type="' . $type . '" placeholder="' . $placeholder .'" type="text name="' . $name . '" value="" class="forms-input"' . $this->getValue($name) . '">');
     } 
 
-    public function submit($class)
+    public function submit($class, $name)
     {
-       return '<button class="' . $class . '" type="submit">Envoyer</button>';
+       return '<button class="' . $class . '"  name="'. $name .'" type="submit">Envoyer</button>';
     }
 }
