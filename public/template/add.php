@@ -1,24 +1,17 @@
 <?php
 
-require_once '../../class/Form.php';
-require_once '../../Class/Student.php';
-require_once '../../Class/Database.php';
+    require_once '../../class/Form.php';
+    require_once '../../Class/Student.php';
+    require_once '../../Class/Database.php';
+    require_once '../../Class/Register.php';
 
-$form = new Form($_POST);
+    $form = new Form($_POST);
+    $re = new Register();
 
-if(isset($_POST['submit'])){
-    
-    if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']))
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        // $prenom = ($_POST['prenom']);
-        // $nom = ($_POST['nom']); 
-        // $email = ($_POST['email']);
-        // $telephone = ($_POST['telephone']);
-
-        $student = new Student($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['telephone']);
-        $student->addStudent($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['telephone']);
+        $register = $re->addRegister($_POST);
     }
-}
 
 ?>
 
@@ -42,13 +35,20 @@ if(isset($_POST['submit'])){
         </ul>
     </div>
 
-    <form class="forms-add" action="#" method="post">
+    <?php
+        if(isset($register))
+        {
+            echo($msg);
+        }
+    ?>
+
+    <form class="forms-add" action="#" method="POST">
         <?php
         echo $form->input('prenom', 'Prénom', 'text');
         echo $form->input('nom', 'Nom', 'text');
         echo $form->input('email', 'Email', 'email');
         echo $form->input('telephone', 'Téléphone', 'tel');
-        echo $form->submit('forms-send', 'submit');
+        echo $form->submit('forms-send', 'Register');
         ?>
     </form>
 
