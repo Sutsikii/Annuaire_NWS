@@ -2,7 +2,7 @@
 
     include_once 'Database.php';
 
-class Register{
+class Register extends Database{
     
     public $db;
 

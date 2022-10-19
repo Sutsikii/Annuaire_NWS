@@ -17,7 +17,7 @@ class Database
     //     $this->db_host = $db_host;
     // }
 
-    private function getPDO()
+    protected function getPDO()
     {
         if($this->pdo === null)
         {
