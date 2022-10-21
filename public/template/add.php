@@ -36,10 +36,8 @@
     </div>
 
     <?php
-        if(isset($register))
-        {
+        if(isset($msg))
             echo($msg);
-        }
     ?>
 
     <form class="forms-add" action="#" method="POST">

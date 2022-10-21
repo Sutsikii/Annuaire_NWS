@@ -7,7 +7,7 @@ class Database
     private $db_user;
     private $db_pass;
     private $db_host;
-    private $pdo;
+    public $pdo;
 
     // public function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost')
     // {
@@ -17,7 +17,7 @@ class Database
     //     $this->db_host = $db_host;
     // }
 
-    protected function getPDO()
+    public function getPDO()
     {
         if($this->pdo === null)
         {
@@ -29,12 +29,12 @@ class Database
         return $this->pdo;
     }
 
-    public function query($statement)
-    {
-        $req = $this->getPDO()->query($statement);
-        $datas = $req->fetchAll(PDO::FETCH_OBJ);
-        return $datas;
-    }
+    // public function query($statement)
+    // {
+    //     $req = $this->getPDO()->query($statement);
+    //     $datas = $req->fetchAll(PDO::FETCH_OBJ);
+    //     return $datas;
+    // }
 
     // public function addDatas($prenom, $nom, $email, $telephone)
     // {

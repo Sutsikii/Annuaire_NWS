@@ -18,16 +18,16 @@ class Register extends Database{
         $email = $data['email'];
         $telephone = $data['telephone'];
 
-        if(empty($prenom) || empty($nom) || empty($email) || empty($telephone))
+        if(isset($prenom) || isset($nom) || isset($email) || isset($telephone))
         {
-            $msg = "Tous les champs sont obligatoires.";
-            return $msg;
+            $query = "INSERT INTO etudiant (prenom, nom, email, telephone) VALUES (?,?,?,?)";
+            $request = $this->getPDO()->prepare($query);
+            $request->execute([$prenom, $nom, $email, $telephone]);
         }
         else
         {
-            $query = "INSERT INTO etudiant(prenom, nom, email, telephone) value(?,?,?,?)";
-            $request = $this->getPDO()->prepare($query);
-            $request->execute(array($prenom, $nom, $email, $telephone));
+            $msg = "Tous les champs sont obligatoires.";
+            return $msg;
         }
     }
 
