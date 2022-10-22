@@ -42,7 +42,7 @@
                     <p><?= $student['email'] ?></p>
                     <p>0<?= $student['telephone'] ?></p>
                     <button>Modifier</button> 
-                    <button>Supprimer</button>
+                    <?php echo "<a href='/Annuaire_NWS/controllers/student.process.php?send=del&id=" . $student['id'] . "' class='btn btn-danger'>Supprimer</a>"?>
 
                 </li>
 

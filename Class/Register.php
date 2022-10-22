@@ -44,4 +44,13 @@ class Register extends Database{
         }
     }
 
+    public function deleteRow($id)
+    {
+        $sql = "DELETE FROM etudiant WHERE id = ?";
+
+        $stmt = $this->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
+
+    }
+
 }
