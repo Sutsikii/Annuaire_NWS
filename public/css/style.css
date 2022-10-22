@@ -24,7 +24,7 @@ a{
 /* Navbar */
 
 div.navbar{
-    position:fixed;
+    position:relative;
     width: 100%;
 }
 
@@ -115,3 +115,37 @@ button.forms-send:focus {
     padding: .75rem 1.5rem;
   }
 }
+
+/* Page liste */
+
+div.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+}
+
+div.student-card{
+    margin: 50px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 265px);
+}
+
+div.student-card li.student{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #04AA6D;
+    padding: 20px;
+}
+
+div.student-card li.student h2{
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+div.student-card li.student button{
+    margin: 10px 0;
+}
+

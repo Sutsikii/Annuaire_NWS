@@ -31,4 +31,17 @@ class Register extends Database{
         }
     }
 
+    public function showTables($table)
+    {
+        $sql = "SELECT * FROM `$table`";
+
+        $stmt = $this->getPDO()->prepare($sql);
+        $stmt->execute();
+
+        while($result = $stmt->fetchAll())
+        {
+            return $result;
+        }
+    }
+
 }
