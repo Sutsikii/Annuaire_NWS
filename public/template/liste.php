@@ -3,7 +3,6 @@
     require_once '../../class/Form.php';
     require_once '../../Class/Student.php';
     require_once '../../Class/Database.php';
-    require_once '../../Class/Register.php';
 
 ?>
 
@@ -37,12 +36,12 @@
             <?php foreach($request->showTables("etudiant") as $student) : ?>
 
                 <li class="student">
-                    <p><?= $student['id'] ?>. <?= $student['prenom'] ?> <?= $student['nom'] ?></p>
+                    <p><?= $student['prenom'] ?> <?= $student['nom'] ?></p>
                     <h2>Information de contact : </h2>
                     <p><?= $student['email'] ?></p>
                     <p>0<?= $student['telephone'] ?></p>
-                    <button>Modifier</button> 
-                    <?php echo "<a href='/Annuaire_NWS/controllers/student.process.php?send=del&id=" . $student['id'] . "' class='btn btn-danger'>Supprimer</a>"?>
+                    <a href="#">Modifier </a> 
+                    <?php echo "<a href='/Annuaire_NWS/controllers/student.process.php?send=del&id=" . $student['id'] . "'>Supprimer</a>"?>
 
                 </li>
 

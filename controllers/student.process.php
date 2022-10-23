@@ -1,6 +1,6 @@
 <?php 
 
-include_once "../Class/Register.php";
+include_once "../Class/Student.php";
 
 $student = new Register();
 
@@ -9,5 +9,5 @@ $student = new Register();
         $id = $_GET['id'];
         $student->deleteRow($id);
 
-        header("location: {$_SERVER['HTTP_ORIGIN']}/Annuaire_NWS/index.php?status=deleted");
+        header("location: {$_SERVER['HTTP_ORIGIN']}/Annuaire_NWS/public/template/liste.php");
     }

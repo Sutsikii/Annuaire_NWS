@@ -3,7 +3,6 @@
     require_once '../../class/Form.php';
     require_once '../../Class/Student.php';
     require_once '../../Class/Database.php';
-    require_once '../../Class/Register.php';
 
     $form = new Form($_POST);
     $re = new Register();

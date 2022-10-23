@@ -136,7 +136,7 @@ div.student-card li.student{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background-color: #04AA6D;
+    background-color: #333333;
     padding: 20px;
 }
 
@@ -149,3 +149,22 @@ div.student-card li.student button{
     margin: 10px 0;
 }
 
+div.student-card{
+    color:white;
+}
+
+div.student-card a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    background-color: #008d59;
+    color: white;
+    padding: 3px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+div.student-card a:hover{
+    background-color: #04AA6D;
+}
