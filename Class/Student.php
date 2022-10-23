@@ -50,7 +50,23 @@ class Register extends Database{
 
         $stmt = $this->getPDO()->prepare($sql);
         $stmt->execute([$id]);
+    }
 
+    public function editStudent($id)
+    {
+        $sql = "SELECT * FROM etudiant WHERE id = ?";
+        $stmt = $this->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
+        $result = $stmt->fetch();
+
+        return $result;
+    }
+
+    public function updateStudent($prenom, $nom, $email, $telephone, $id)
+    {
+        $sql = "UPDATE etudiant SET prenom = ?, nom = ?, email = ?, telephone = ? WHERE id= ?";
+        $stmt = $this->getPDO()->prepare($sql);
+        $stmt->execute([$prenom, $nom, $email, $telephone, $id]);
     }
 
 }

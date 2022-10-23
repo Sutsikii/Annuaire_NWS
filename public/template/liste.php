@@ -40,8 +40,8 @@
                     <h2>Information de contact : </h2>
                     <p><?= $student['email'] ?></p>
                     <p>0<?= $student['telephone'] ?></p>
-                    <a href="#">Modifier </a> 
-                    <?php echo "<a href='/Annuaire_NWS/controllers/student.process.php?send=del&id=" . $student['id'] . "'>Supprimer</a>"?>
+                    <a href="editForm.php?id=<?= $student['id']?>">Modifier </a> 
+                    <a href="/Annuaire_NWS/controllers/student.process.php?send=del&id=<?= $student['id']?>">Supprimer</a>
 
                 </li>
 

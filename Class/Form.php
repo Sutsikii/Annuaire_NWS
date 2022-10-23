@@ -21,13 +21,18 @@ class Form{
         return isset($this->data[$index]) ? $this->data[$index] : null;
     }
 
-    public function input($name, $placeholder, $type)
+    public function input($name, $placeholder, $type, $value)
     {
-        return ('<input type="' . $type . '" placeholder="' . $placeholder .'" type="text" name="' . $name . '" value="" class="forms-input"' . $this->getValue($name) . '">');
+        return ('<input type="' . $type . '" placeholder="' . $placeholder .'" type="text" name="' . $name . '" value="' . $value . '" class="forms-input"' . $this->getValue($name) . '">');
     } 
 
-    public function submit($class, $name)
+    public function submit($class, $name, $text)
     {
-       return '<button class="' . $class . '"  name="'. $name .'" type="submit">Envoyer</button>';
+       return '<button class="' . $class . '"  name="'. $name .'" type="submit">' . $text . '</button>';
+    }
+
+    public function return($class, $name, $text, $link)
+    {
+       return '<button class="' . $class . '"  name="'. $name .'" type="submit"><a href="'. $link .'">' . $text . '</a></button>';
     }
 }

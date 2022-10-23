@@ -41,11 +41,11 @@
 
     <form class="forms-add" action="#" method="POST">
         <?php
-        echo $form->input('prenom', 'Prénom', 'text');
-        echo $form->input('nom', 'Nom', 'text');
-        echo $form->input('email', 'Email', 'email');
-        echo $form->input('telephone', 'Téléphone', 'tel');
-        echo $form->submit('forms-send', 'Register');
+        echo $form->input('prenom', 'Prénom', 'text', '');
+        echo $form->input('nom', 'Nom', 'text', '');
+        echo $form->input('email', 'Email', 'email', '');
+        echo $form->input('telephone', 'Téléphone', 'tel', '');
+        echo $form->submit('forms-send', 'Register', 'Ajouter', '');
         ?>
     </form>
 

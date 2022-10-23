@@ -168,3 +168,19 @@ div.student-card a{
 div.student-card a:hover{
     background-color: #04AA6D;
 }
+
+/* Edit Student */
+
+div.edit h2{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+div.buttons button{
+    margin: 30px 10px;
+}
+
+div.buttons button a{
+    color:white;
+}
