@@ -39,7 +39,7 @@
                     <p><?= $student['prenom'] ?> <?= $student['nom'] ?></p>
                     <h2>Information de contact : </h2>
                     <p><?= $student['email'] ?></p>
-                    <p>0<?= $student['telephone'] ?></p>
+                    <p><?= $student['telephone'] ?></p>
                     <a href="editForm.php?id=<?= $student['id']?>">Modifier </a> 
                     <a href="/Annuaire_NWS/controllers/student.process.php?send=del&id=<?= $student['id']?>">Supprimer</a>
 

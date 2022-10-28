@@ -53,7 +53,7 @@
         ?>
         <div class="buttons">
             <?php
-                echo $form->return('forms-send', 'Register', 'Retour', 'liste.php');
+                echo $form->return('forms-send', 'return', 'Retour', 'liste.php');
                 echo $form->submit('forms-send', 'update', 'Sauvegarder');
             ?>
         </div>

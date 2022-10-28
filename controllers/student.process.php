@@ -16,6 +16,10 @@ $student = new Register();
 
         header("location: {$_SERVER['HTTP_ORIGIN']}/Annuaire_NWS/public/template/liste.php");
     }
+    else if(isset($_POST['return']))
+    {
+        header("location: {$_SERVER['HTTP_ORIGIN']}/Annuaire_NWS/public/template/liste.php");
+    }
     else if($_GET['send'] === 'del')
     {
         $id = $_GET['id'];
