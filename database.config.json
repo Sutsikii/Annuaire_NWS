@@ -1,0 +1,6 @@
+{
+    "server" : "localhost",
+    "database" : "annuaire",
+    "user" : "root",
+    "password" : ""
+}
