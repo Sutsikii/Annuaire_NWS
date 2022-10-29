@@ -4,6 +4,19 @@
     require_once '../../Class/Student.php';
     require_once '../../Class/Database.php';
 
+    $student = new Register();
+
+    @$keywords = $_GET["keywords"];
+    @$valider =$_GET["valider"];
+    if(isset($valider) && !empty(trim($keywords)))
+    {
+        $res = $student->getPDO()->prepare("SELECT * FROM etudiant WHERE prenom like '%$keywords%'");
+        $res->setFetchMode(PDO::FETCH_ASSOC);
+        $res->execute();
+        $tab = $res->fetchAll(); 
+
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +40,32 @@
     </div>
 
     <div class="search">
-        <p>Rechercher : </p>
+        <form action="">
+            <input type="text" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher">
+            <input type="submit" name="valider" value="Rechercher">
+        </form>
     </div>
+
+    <div id="nbr"><?php if(isset($valider) && !empty(trim($keywords))) @count($tab). " ".(@count($tab)>1?"résultats trouvés":"résultat trouvé"); ?></div>
 
     <div class="student-card">
         <?php $request = new Register(); ?>
-        <?php if($request->showTables("etudiant")) : ?>
+        <?php if(isset($valider) && !empty(trim($keywords))) :?>
+            <?php foreach($tab as $student) : ?>
+
+                <li class="student">
+                    <p><?= $student['prenom'] ?> <?= $student['nom'] ?></p>
+                    <h2>Information de contact : </h2>
+                    <p><?= $student['email'] ?></p>
+                    <p><?= $student['telephone'] ?></p>
+                    <a href="editForm.php?id=<?= $student['id']?>">Modifier </a> 
+                    <a href="/Annuaire_NWS/controllers/student.process.php?send=del&id=<?= $student['id']?>">Supprimer</a>
+
+                </li>
+
+            <?php endforeach; ?>
+
+        <?php elseif($request->showTables("etudiant")) : ?>
             <?php foreach($request->showTables("etudiant") as $student) : ?>
 
                 <li class="student">
