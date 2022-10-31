@@ -10,7 +10,7 @@
     @$valider =$_GET["valider"];
     if(isset($valider) && !empty(trim($keywords)))
     {
-        $res = $student->getPDO()->prepare("SELECT * FROM etudiant WHERE prenom like '%$keywords%'");
+        $res = $student->getPDO()->prepare("SELECT * FROM etudiant WHERE (prenom like '%$keywords%' or nom like '%$keywords%' or email like '%$keywords%' or telephone like '%$keywords%')");
         $res->setFetchMode(PDO::FETCH_ASSOC);
         $res->execute();
         $tab = $res->fetchAll(); 
