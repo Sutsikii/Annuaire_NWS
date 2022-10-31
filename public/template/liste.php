@@ -14,7 +14,7 @@
         $res->setFetchMode(PDO::FETCH_ASSOC);
         $res->execute();
         $tab = $res->fetchAll(); 
-
+        $afficher = True;
     }
 
 ?>
@@ -46,7 +46,7 @@
         </form>
     </div>
 
-    <div id="nbr"><?php if(isset($valider) && !empty(trim($keywords))) @count($tab). " ".(@count($tab)>1?"résultats trouvés":"résultat trouvé"); ?></div>
+    <div id="nbr"><?php if(@$afficher == TRUE) @count($tab). " ".(@count($tab)>1?"résultats trouvés":"résultat trouvé"); ?></div>
 
     <div class="student-card">
         <?php $request = new Register(); ?>
