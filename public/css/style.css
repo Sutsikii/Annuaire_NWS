@@ -192,13 +192,14 @@ div.buttons button a{
     justify-content: center;
     margin-top: 2.2rem;
     font-weight: 700;
+    color : #333333;
     align-items: center;
 }
 
 #nbr .text-nbr{
     display: flex;
     justify-content: center;
-    border-bottom: solid 1px #000;
+    border-bottom: solid 1px #333333;
     width: 50%;
     padding-bottom : 1.2rem;
 }
@@ -215,11 +216,12 @@ div.buttons button a{
     height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #04AA6D;
+    color: #333333;
     font-size: 1rem;
 }
 
 .searchTerm:focus{
+    color: #04AA6D;
     font-weight: 600;
 }
 
@@ -233,4 +235,8 @@ div.buttons button a{
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
+}
+
+.searchButton:hover{
+    color:#333333;
 }
