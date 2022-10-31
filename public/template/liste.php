@@ -14,7 +14,7 @@
         $res->setFetchMode(PDO::FETCH_ASSOC);
         $res->execute();
         $tab = $res->fetchAll(); 
-        $afficher = True;
+        $afficher = "oui";
     }
 
 ?>
@@ -27,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Annuaire NWS</title>
 </head>
 <body>
@@ -39,14 +40,21 @@
         </ul>
     </div>
 
-    <div class="search">
-        <form action="">
-            <input type="text" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher">
-            <input type="submit" name="valider" value="Rechercher">
-        </form>
-    </div>
+    <form action="">
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un étudiant">
+                <button type="submit" name="valider" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
 
-    <div id="nbr"><?php if(@$afficher == TRUE) @count($tab). " ".(@count($tab)>1?"résultats trouvés":"résultat trouvé"); ?></div>
+
+    <?php if (@$afficher=="oui") { ?>
+        <div id="nbr"> <p class="text-nbr"> <?=count($tab). " " .(count($tab)>1? "Résultats trouvés": "Résultat trouvé"); ?> </p> </div>
+    <?php } ?>
 
     <div class="student-card">
         <?php $request = new Register(); ?>

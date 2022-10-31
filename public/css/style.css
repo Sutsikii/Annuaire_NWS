@@ -184,3 +184,53 @@ div.buttons button{
 div.buttons button a{
     color:white;
 }
+
+/* Filtre de recherche */
+
+#nbr{
+    display: flex;
+    justify-content: center;
+    margin-top: 2.2rem;
+    font-weight: 700;
+    align-items: center;
+}
+
+#nbr .text-nbr{
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 1px #000;
+    width: 50%;
+    padding-bottom : 1.2rem;
+}
+
+.search {
+    position: relative;
+    display: flex;
+}
+  
+.searchTerm {
+    border: 3px solid #04AA6D;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #04AA6D;
+    font-size: 1rem;
+}
+
+.searchTerm:focus{
+    font-weight: 600;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #04AA6D;
+    background: #04AA6D;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
