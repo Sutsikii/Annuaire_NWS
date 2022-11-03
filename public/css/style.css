@@ -240,3 +240,10 @@ div.buttons button a{
 .searchButton:hover{
     color:#333333;
 }
+
+.student-card p{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

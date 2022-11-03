@@ -4,12 +4,7 @@
 
 class Register extends Database{
     
-    public $db;
 
-    public function __construct()
-    {
-        $this->db = new Database();
-    }
 
     public function addRegister($data)
     {
